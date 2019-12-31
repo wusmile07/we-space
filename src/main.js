@@ -3,7 +3,8 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-
+import './components/element-ui-components'
+import 'element-ui/lib/theme-chalk/index.css'
 Vue.config.productionTip = false
 
 new Vue({
