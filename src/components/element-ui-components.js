@@ -23,7 +23,8 @@ import {
   FormItem,
   Input,
   Carousel,
-  CarouselItem
+  CarouselItem,
+  Upload
 } from 'element-ui';
 
 Vue.use(Button);
@@ -46,6 +47,7 @@ Vue.use(FormItem);
 Vue.use(Input);
 Vue.use(Carousel);
 Vue.use(CarouselItem);
+Vue.use( Upload);
 
 Vue.prototype.$loading = Loading.service;
 Vue.prototype.$msgbox = MessageBox;

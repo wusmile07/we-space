@@ -7,7 +7,7 @@
     </div>
         <div class="copy">
             <div class="box1">
-                <img src="../assets/bed1.png">
+                <img src="../assets/bed1.png" @click="money">
                 <span>北欧实木床北美黑胡桃木床1.8米双人床现……</span>
                 <div class="str">
                     <strong>¥2319-4679</strong>
@@ -59,6 +59,28 @@
                 </div>
             </div>
         </div>
+        <div class="tab">
+            <router-link :to="{ name: 'home' }" >
+                <img v-if="$route.name==='home'" src="../assets/home.png">
+                <img v-else src="../assets/bluehome.png">
+                <span>首页</span>
+            </router-link>
+            <router-link :to="{ name: 'index' }">
+                <img v-if="$route.name==='index'" src="../assets/liu.png">
+                <img v-else src="../assets/bluexiu.png">
+                <span>装修</span>
+            </router-link>
+            <router-link :to="{ name: 'shop' }">
+                <img  v-if="$route.name==='shop'" src="../assets/blueshop.png">
+                <img  v-else src="../assets/shop.png">
+                <span>商城</span>
+            </router-link>
+            <router-link :to="{ name: 'user' }">
+                <img v-if="$router.name==='user'" src="../assets/bluemy.png">
+                <img v-else src="../assets/my.png">
+                <span>我的</span>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -75,7 +97,14 @@
         },
         methods:{
          back(){
-             this.$router.go(-1)
+             this.$router.push({
+                 name: 'home'
+             })
+         },
+         money(){
+             this.$router.push({
+                 name: 'about'
+             })
          }
         }
     }
@@ -254,6 +283,34 @@
                 font-size:.2rem;
                 margin-top: -.03rem;
             }
+        }
+    }
+}
+.tab{
+    width: 100%;
+    height:1rem;
+    background: white;
+    /*background: yellow;*/
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    a{
+        width: .5rem;
+        height: .9rem;
+        margin: .08rem .65rem;
+        text-decoration: none;
+        /*background: rosybrown;*/
+        img{
+            width: .5rem;
+            height: .5rem;
+        }
+        img.active{
+            width: .5rem;
+            height: .5rem;
+        }
+        span{
+            font-size: .2rem;
         }
     }
 }

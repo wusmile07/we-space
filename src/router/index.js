@@ -25,12 +25,17 @@ const routes = [
     name: 'index',
     component: () => import('../views/Index')
   },
+  {
+    path: '/user',
+    name: 'user',
+    component: () => import('../views/User')
+  },
 ]
 
 const router = new VueRouter({
   mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
+  routes,
+  linkExactActiveClass:'active'
+});
 
 export default router

@@ -35,7 +35,7 @@
       <a href="javascript：；" >评价</a>
       <a href="javascript：；">详情</a>
       <a href="javascript：；">推荐</a>
-      <img src="../assets/share.png">
+      <img src="../assets/share.png" @click="s">
     </div>
     <div class="evaluate">
       <div class=" evaluates">
@@ -69,6 +69,44 @@
         <button>加入购物车</button>
         <button class="promptly">立即购买</button>
     </div>
+    <div class="fei" >
+      <div class="go">
+        <span>分享到</span>
+        <div class="wei">
+          <div class="peng">
+            <img src="../assets/weixin-2.png">
+            <span>微信好友</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/pengyouquan.png">
+            <span>朋友圈</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/qq-copy.png">
+            <span> QQ好友</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/qqkongjian-2.png">
+            <span>QQ空间</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/unie61d.png">
+            <span>微博</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/fuzhilianjie.png">
+            <span>复制链接</span>
+          </div>
+          <div class="peng">
+            <img src="../assets/tupian.png">
+            <span>分享图片</span>
+          </div>
+        </div>
+        <div class="xiao">
+          <span>取消</span>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -85,7 +123,11 @@
           {
             src: require('../assets/bed.png'),
           }
-        ]
+        ],
+      }
+    },
+    methods: {
+      s(){
       }
     }
   }
@@ -95,6 +137,9 @@
 
 
 <style lang="scss" scoped>
+  body{
+    position: relative;
+  }
   .srow{
     width: 100%;
     height:15rem;
@@ -295,5 +340,67 @@
       border-radius: .1rem;
      margin-right: .3rem;
     }
+  }
+  .fei{
+    width: 100%;
+    height: 5.17rem;
+    background: white;
+    display: none;
+    position: absolute;
+    top:10rem;
+    left:0;
+    .go{
+      width: 100%;
+      height: .8rem;
+      /*background: palegoldenrod;*/
+      span{
+        display: block;
+        font-size: .36rem;
+        line-height: .8rem;
+        text-align: center;
+      }
+      .wei{
+        width: 100%;
+        height: 3rem;
+        /*background: yellow;*/
+        margin-top: .3rem;
+        border-bottom: 1px solid rgba(111,111,111,1);
+        display: flex;
+        flex-flow: wrap;
+        /*justify-content: space-between;*/
+        .peng{
+          width: 1.2rem;
+          height: 1.2rem;
+          /*background: rebeccapurple;*/
+          margin: 0 .3rem;
+        }
+        img{
+          margin: 0 auto;
+          display: block;
+          width: .7rem;
+          height: .7rem;
+        }
+        span{
+          font-size: .2rem;
+          text-align: center;
+          display: block;
+        }
+      }
+    }
+  }
+  .xiao{
+    width: 100%;
+    height: 1rem;
+    background: white;
+    span{
+      display: block;
+      font-size: .36rem;
+      line-height: 1.5rem;
+      text-align: center;
+      color:rgba(111,111,111,1);
+    }
+  }
+  .fei.active{
+    display: block;
   }
 </style>
